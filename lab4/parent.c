@@ -255,7 +255,5 @@ int main()
     }
     memptr1[0]=EOF;
     memptr2[0]=EOF;
-    // kill(pid, SIGKILL);
-    // kill(pid2, SIGKILL);
     return 0;
 }
