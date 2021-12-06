@@ -14,7 +14,7 @@ void change()
     dlclose(my_lib);
     if (curr == 1)
     {
-        my_lib = dlopen("/home/yungalaxxxy/Документы/GitHub/OS_labs/lab5/my_lib2.so", RTLD_LAZY);
+        my_lib = dlopen("/home/yungalaxxxy/my_labs/OS_labs/lab5/my_lib2.so", RTLD_LAZY);
         curr++;
         sinIntegral = dlsym(my_lib, "sinIntegral");
         GCF = dlsym(my_lib, "GCF");
@@ -22,7 +22,7 @@ void change()
     }
     else
     {
-        my_lib = dlopen("/home/yungalaxxxy/Документы/GitHub/OS_labs/lab5/my_lib1.so", RTLD_LAZY);
+        my_lib = dlopen("/home/yungalaxxxy/my_labs/OS_labs/lab5/my_lib1.so", RTLD_LAZY);
         curr--;
         sinIntegral = dlsym(my_lib, "sinIntegral");
         GCF = dlsym(my_lib, "GCF");
@@ -36,7 +36,7 @@ int main()
     int a, b;
     int choose = -1;
 
-    my_lib = dlopen("/home/yungalaxxxy/Документы/GitHub/OS_labs/lab5/my_lib1.so", RTLD_LAZY);
+    my_lib = dlopen("/home/yungalaxxxy/my_labs/OS_labs/lab5/my_lib1.so", RTLD_LAZY);
     if (!my_lib)
     {
         fprintf(stderr, "the big bruh\n", dlerror());
