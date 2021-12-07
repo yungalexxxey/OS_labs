@@ -1,8 +1,8 @@
 first: my_lib2.so my_lib1.so my_lib1.o
-	gcc dynmain.c -o dynmain -ldl
+	gcc dynmain.c -L. -ldl -o dynmain -Wl,-rpath -Wl,.
 	gcc statmain.c mylib1.c -lm -o statmain
 second: my_lib2.so my_lib1.so my_lib2.o
-	gcc dynmain.c -o dynmain -ldl
+	gcc dynmain.c -L. -ldl -o dynmain -Wl,-rpath -Wl,.
 	gcc statmain.c mylib2.c -lm -o statmain
 my_lib2.so: my_lib2.o
 	gcc -shared mylib2.o -o my_lib2.so -lm
