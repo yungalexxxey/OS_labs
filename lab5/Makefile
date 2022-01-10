@@ -1,5 +1,7 @@
 first: my_lib2.so my_lib1.so my_lib1.o
+
 	gcc dynmain.c -L. -ldl -o dynmain -Wl,-rpath -Wl,.
+
 	gcc statmain.c mylib1.c -lm -o statmain
 second: my_lib2.so my_lib1.so my_lib2.o
 	gcc dynmain.c -L. -ldl -o dynmain -Wl,-rpath -Wl,.

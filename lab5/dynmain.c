@@ -39,7 +39,7 @@ int main()
     my_lib = dlopen("my_lib1.so", RTLD_LAZY);
     if (!my_lib)
     {
-        fprintf(stderr, "the big bruh\n", dlerror());
+        fprintf(stderr, "the big error\n", dlerror());
         return -1;
     }
 

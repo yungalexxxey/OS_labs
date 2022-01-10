@@ -17,7 +17,6 @@ int main(int argc, char **argv)
   int a = atoi(argv[2]);
   char *empty = (char *)malloc(map_size * sizeof(char));
   const char *filename = argv[1];
-  printf("%s and %d \n", filename, a);
   FILE *file = fopen(filename, "w");
   int map_fd;
   sem_t *semptr;
@@ -89,8 +88,8 @@ int main(int argc, char **argv)
       }
       continue;
     }
-    string = (char *)realloc(string, strlen(memptr) * sizeof(char));
     nstring = (char *)realloc(nstring, strlen(memptr) * sizeof(char));
+    string = (char *)realloc(string, strlen(memptr) * sizeof(char));
     strcpy(string, memptr);
     ni = 0;
     i = strlen(string);
